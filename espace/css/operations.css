@@ -1,0 +1,173 @@
+/* SOGARA · Espace de gestion — modules Opérations (stocks & bacs, logistique & transport) */
+
+/* ---------- Bacs (complète .tanks/.tank d'erp.css) ---------- */
+.ops-tanks{grid-template-columns:repeat(auto-fill,minmax(168px,1fr))}
+.tank.ops{position:relative;cursor:pointer;padding:12px 12px 14px;border-top:4px solid var(--pc,#94a3b8);transition:box-shadow .15s,transform .15s}
+.tank.ops:hover{box-shadow:var(--sh);transform:translateY(-2px)}
+.tank.ops .ops-tank__top{display:flex;align-items:center;justify-content:space-between;width:100%;gap:6px}
+.tank.ops .ops-tank__top b{font-family:Sora,sans-serif;font-size:14px}
+.tank.ops .ops-tank__prod{font-size:12px;font-weight:600;color:var(--ink-2);min-height:16px}
+.tank.ops .tank__vessel{width:92px;height:112px;border-color:#b6c3d4;background:repeating-linear-gradient(0deg,#f6f9fc 0 10px,#f0f4f9 10px 11px)}
+.tank.ops.sphere .tank__vessel{border-radius:50%;width:104px;height:104px}
+.tank.ops.cigare .tank__vessel{border-radius:40px;width:118px;height:62px;margin:25px 0}
+.tank__fill.ops{background:linear-gradient(180deg,var(--pc) 0%,var(--pc2,var(--pc)) 100%);opacity:.92}
+.tank__mark{position:absolute;left:0;right:0;border-top:2px dashed;z-index:2;pointer-events:none}
+.tank__mark.max{border-color:rgba(217,54,54,.75)} .tank__mark.min{border-color:rgba(232,120,12,.85)}
+.tank.ops .tank__pct{z-index:3;font-size:16px}
+.tank.ops .tank__pct.light{color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.45)}
+.ops-tank__vol{font-size:12.5px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+.ops-tank__meta{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;font-size:11px;color:var(--ink-3)}
+.ops-tank__flag{position:absolute;top:44px;right:10px;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:var(--red-bg);color:var(--red)}
+.ops-tank__flag svg{width:13px}
+.ops-tank__flag.orange{background:var(--orange-bg);color:var(--orange)}
+.ops-maint .tank__vessel{background:repeating-linear-gradient(45deg,#f5f7fa 0 8px,#e7ecf2 8px 16px)}
+
+/* grande cuve dans la fiche */
+.ops-bigtank{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.ops-bigtank .tank__vessel{width:130px;height:170px;border:4px solid #9fb0c6;border-radius:14px 14px 8px 8px;position:relative;overflow:hidden;background:#f5f8fb;flex:none}
+.ops-bigtank .tank__pct{font-size:22px}
+.ops-bigtank .kv{flex:1;min-width:220px}
+
+/* ---------- Jauges par produit ---------- */
+.ops-prod{display:flex;flex-direction:column}
+.ops-prod__row{display:grid;grid-template-columns:minmax(150px,1.2fr) minmax(120px,2fr) 98px;gap:14px;align-items:center;padding:11px 18px;border-bottom:1px solid var(--line-2)}
+.ops-prod__row:last-child{border-bottom:0}
+.ops-prod__name{display:flex;align-items:center;gap:10px;min-width:0}
+.ops-prod__name i{width:12px;height:12px;border-radius:4px;flex:none}
+.ops-prod__name b{font-size:13px;display:block}
+.ops-prod__name span{font-size:11.5px;color:var(--ink-3)}
+.ops-bar{position:relative;height:12px;border-radius:10px;background:var(--line-2);overflow:visible}
+.ops-bar>i{position:absolute;left:0;top:0;bottom:0;border-radius:10px}
+.ops-bar>em{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--orange);border-radius:2px}
+.ops-bar__lbl{display:flex;justify-content:space-between;font-size:11px;color:var(--ink-3);margin-top:5px;font-variant-numeric:tabular-nums}
+.ops-days{display:flex;flex-direction:column;align-items:flex-end;line-height:1.1}
+.ops-days b{font-family:Sora,sans-serif;font-size:19px}
+.ops-days span{font-size:10.5px;color:var(--ink-3);text-align:right}
+.ops-days.red b{color:var(--red)} .ops-days.orange b{color:var(--orange)} .ops-days.green b{color:var(--green)}
+
+/* ---------- Divers ---------- */
+.ops-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.ops-head h2{font-size:18px}
+.ops-head p{margin:0;color:var(--ink-3);font-size:12.5px;width:100%}
+.ops-dot{display:inline-block;width:10px;height:10px;border-radius:3px;vertical-align:-1px;margin-right:6px}
+.ops-alerts .list__item{padding:11px 16px}
+.ops-mini{font-size:11.5px;color:var(--ink-3)}
+.ops-num{font-variant-numeric:tabular-nums}
+.ops-pos{color:var(--green);font-weight:600} .ops-neg{color:var(--red);font-weight:600}
+.ops-kpis{margin-bottom:16px}
+.ops-toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.ops-toolbar .spacer{flex:1}
+.ops-toolbar .select,.ops-toolbar .input{width:auto;min-width:150px}
+.ops-note{background:#f8fafc;border:1px dashed var(--line);border-radius:10px;padding:10px 12px;font-size:12.5px;color:var(--ink-2)}
+.ops-stat{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.ops-stat>div{background:#f8fafc;border:1px solid var(--line-2);border-radius:10px;padding:10px 12px}
+.ops-stat>div span{display:block;font-size:11.5px;color:var(--ink-3)}
+.ops-stat>div b{font-family:Sora,sans-serif;font-size:16px}
+.ops-linechips{display:flex;gap:6px;flex-wrap:wrap}
+.ops-linechips .chip i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}
+
+/* ---------- Check-list sécurité ---------- */
+.ops-check{display:flex;flex-direction:column;gap:8px}
+.ops-check label{display:flex;gap:12px;align-items:center;border:1px solid var(--line);border-radius:12px;padding:11px 14px;cursor:pointer;transition:background .12s,border-color .12s}
+.ops-check label:hover{background:#f8fafd}
+.ops-check input{width:20px;height:20px;accent-color:var(--green);flex:none}
+.ops-check label.ok{border-color:#b9e5c8;background:var(--green-bg)}
+.ops-check b{display:block;font-size:13px} .ops-check span{font-size:12px;color:var(--ink-3)}
+.ops-check__score{display:flex;align-items:center;gap:10px;margin-top:6px}
+
+/* ---------- Planning des postes de chargement ---------- */
+.ops-plan-wrap{overflow-x:auto;border-top:1px solid var(--line-2)}
+.ops-plan{display:grid;grid-template-columns:86px repeat(6,minmax(138px,1fr));min-width:920px}
+.ops-plan__h{background:#f8fafc;border-bottom:1px solid var(--line);padding:9px 10px;font-size:11.5px;font-weight:700;color:var(--ink-2);position:sticky;top:0}
+.ops-plan__h span{display:block;font-weight:500;color:var(--ink-3);font-size:10.5px}
+.ops-plan__t{padding:10px;font-size:12px;font-weight:700;color:var(--ink-2);border-bottom:1px solid var(--line-2);border-right:1px solid var(--line);background:#fff;position:sticky;left:0;z-index:1}
+.ops-plan__t span{display:block;font-weight:500;color:var(--ink-3);font-size:11px}
+.ops-plan__c{border-bottom:1px solid var(--line-2);border-right:1px dashed #edf1f6;padding:6px;min-height:78px;display:flex;flex-direction:column;gap:5px}
+.ops-plan__c.now{background:linear-gradient(0deg,rgba(252,231,0,.07),rgba(252,231,0,.07))}
+.ops-plan__free{flex:1;border:1px dashed #dde4ee;border-radius:9px;display:grid;place-items:center;font-size:11px;color:#a8b3c3;cursor:pointer;min-height:60px}
+.ops-plan__free:hover{background:#f7f9fc;color:var(--navy-3);border-color:var(--navy-3)}
+.ops-slot{border-radius:9px;padding:7px 9px;font-size:11.5px;cursor:pointer;border-left:4px solid var(--sc,#94a3b8);background:#f6f8fb;display:flex;flex-direction:column;gap:2px;transition:box-shadow .12s}
+.ops-slot:hover{box-shadow:var(--sh)}
+.ops-slot b{font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ops-slot span{color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ops-slot .badge{align-self:flex-start;font-size:10.5px;padding:1px 7px;margin-top:2px}
+.ops-slot.s-plan{--sc:#7c3aed;background:#f7f3ff} .ops-slot.s-entree{--sc:#e8780c;background:#fff6ec} .ops-slot.s-charg{--sc:#2563eb;background:#eef4ff}
+.ops-slot.s-pesee{--sc:#0e7490;background:#e9f7fa} .ops-slot.s-sorti{--sc:#1e9e4a;background:#ecf8f0} .ops-slot.s-refus{--sc:#d93636;background:#fdf0f0}
+.ops-daynav{display:flex;align-items:center;gap:6px}
+.ops-daynav b{min-width:150px;text-align:center;font-family:Sora,sans-serif;font-size:14px}
+
+/* ---------- Navires ---------- */
+.ops-ships{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+.ops-ship{border:1px solid var(--line);border-radius:14px;background:#fff;padding:14px 16px;display:flex;flex-direction:column;gap:10px;cursor:pointer;position:relative;overflow:hidden}
+.ops-ship:hover{box-shadow:var(--sh)}
+.ops-ship::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--sc,#94a3b8)}
+.ops-ship__h{display:flex;gap:12px;align-items:flex-start}
+.ops-ship__ico{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;flex:none}
+.ops-ship__ico svg{width:21px}
+.ops-ship__h b{font-family:Sora,sans-serif;font-size:14.5px;display:block}
+.ops-ship__h .small{color:var(--ink-3)}
+.ops-ship__h .badge{margin-left:auto}
+.ops-ship__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.ops-ship__grid div{background:#f8fafc;border-radius:9px;padding:7px 9px;min-width:0}
+.ops-ship__grid span{display:block;font-size:10.5px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.04em}
+.ops-ship__grid b{font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+.ops-ship .steps{padding:0}
+.ops-ship .step{min-width:64px;font-size:10.5px}
+.ops-demur{display:flex;align-items:center;gap:8px;border-radius:10px;padding:8px 10px;font-size:12px;font-weight:600}
+.ops-demur svg{width:16px;flex:none}
+
+/* ---------- Documents & impression ---------- */
+.doc .ops-doc-tbl{width:100%;border-collapse:collapse;margin:12px 0;font-size:12.5px}
+.doc .ops-doc-tbl th,.doc .ops-doc-tbl td{border:1px solid var(--line);padding:7px 9px;text-align:left}
+.doc .ops-doc-tbl th{background:#f8fafc;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-3)}
+.doc .ops-doc-tbl td.num{text-align:right;font-variant-numeric:tabular-nums}
+.ops-sign{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px}
+.ops-sign div{border:1px solid var(--line);border-radius:8px;height:86px;padding:8px;font-size:11px;color:var(--ink-3)}
+.ops-doc-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 18px;font-size:12.5px}
+.ops-doc-meta span{color:var(--ink-3)}
+@media print{
+  body.ops-print .app,body.ops-print .toasts{display:none!important}
+  body.ops-print .modal-back{position:static;background:none;padding:0;backdrop-filter:none}
+  body.ops-print .modal{box-shadow:none;max-height:none;width:100%;border-radius:0}
+  body.ops-print .modal__h,body.ops-print .modal__f{display:none!important}
+  body.ops-print .modal__b{overflow:visible;padding:0}
+  body.ops-print .doc{border:0}
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width:640px){
+  .ops-tanks{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .tank.ops{padding:10px 8px 12px}
+  .tank.ops .tank__vessel{width:80px;height:98px}
+  .tank.ops.sphere .tank__vessel{width:90px;height:90px}
+  .tank.ops.cigare .tank__vessel{width:104px;height:56px;margin:21px 0}
+  .ops-prod__row{grid-template-columns:1fr 82px;gap:6px 10px;padding:11px 14px}
+  .ops-prod__row .ops-prod__bar{grid-column:1/-1;grid-row:2}
+  .ops-ships{grid-template-columns:1fr}
+  .ops-ship__grid{gap:6px} .ops-ship__grid div{padding:6px 7px} .ops-ship__grid b{font-size:12px}
+  .ops-toolbar .select,.ops-toolbar .input{min-width:0;flex:1 1 140px}
+  .ops-daynav{width:100%;justify-content:space-between}
+  .ops-daynav b{min-width:0;flex:1}
+  .ops-bigtank{justify-content:center}
+  .ops-sign{grid-template-columns:1fr 1fr}
+  .ops-doc-meta{grid-template-columns:1fr}
+  .doc{padding:16px}
+  .doc .ops-doc-tbl{font-size:11.5px}
+}
+
+/* ajustements */
+.tank.ops em.badge{font-style:normal;font-size:10.5px;padding:2px 7px}
+.tank.ops .ops-tank__top b{white-space:nowrap}
+.tank.ops .ops-tank__prod svg{width:13px;height:13px;color:var(--red);vertical-align:-2px;margin-left:4px}
+.tank.ops .ops-tank__prod.bas svg{color:var(--orange)}
+.donut-legend b{white-space:nowrap}
+.ops-slot em.badge{font-style:normal}
+.ops-bigtank .tank__pct.light{color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.45)}
+@media (max-width:640px){ .ops-hide-m{display:none!important} }
+.ops-stat.sm{grid-template-columns:repeat(auto-fit,minmax(92px,1fr))}
+@media (max-width:640px){
+  .ops-scope table.tbl.responsive td{flex-wrap:wrap;align-items:baseline}
+  .ops-scope table.tbl.responsive td>div{flex-basis:100%;text-align:right}
+  .ops-scope table.tbl.responsive td::before{margin-right:auto}
+}
+@media (max-width:640px){ .doc .ops-doc-tbl{display:block;overflow-x:auto;white-space:nowrap} .doc__head>div:last-child{text-align:left!important} }

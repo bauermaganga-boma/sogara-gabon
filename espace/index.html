@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Connexion — Espace de gestion SOGARA</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0a1f44">
+<link rel="icon" href="../assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/erp.css">
+<style>
+  body{background:#fff}
+  .login{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);min-height:100vh}
+  .login__art{position:relative;color:#fff;padding:44px 52px;display:flex;flex-direction:column;overflow:hidden;background:#071632}
+  .login__art::before{content:"";position:absolute;inset:0;background:url(../assets/img/raffinerie-panorama.jpg) 62% center/cover;opacity:.55}
+  .login__art::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(7,22,50,.92) 10%,rgba(10,31,68,.55) 55%,rgba(7,22,50,.95) 100%)}
+  .login__art>*{position:relative;z-index:1}
+  .brand{display:flex;align-items:center;gap:14px}
+  .brand img{height:58px;border-radius:8px;background:#fce700}
+  .brand b{font:800 20px Sora,sans-serif;letter-spacing:.05em;display:block}
+  .brand span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#aebbd4}
+  .art__main{margin:auto 0;max-width:560px;padding:40px 0}
+  .art__main .eyebrow{display:inline-block;background:rgba(252,231,0,.14);color:#fce700;border:1px solid rgba(252,231,0,.35);border-radius:30px;padding:5px 12px;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+  .art__main h1{font-size:clamp(28px,3.3vw,44px);line-height:1.1;margin:18px 0 14px}
+  .art__main h1 em{font-style:normal;color:#fce700}
+  .art__main p{color:#c9d4e6;font-size:15.5px;line-height:1.6;margin:0 0 26px}
+  .mods{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .mods div{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:10px 12px;font-size:13px;font-weight:500;backdrop-filter:blur(4px)}
+  .mods svg{width:18px;height:18px;color:#fce700;flex:none}
+  .art__foot{font-size:12px;color:#8fa1c0}
+  .login__form{display:flex;align-items:center;justify-content:center;padding:40px 28px;background:var(--bg)}
+  .box{width:min(460px,100%);min-width:0}
+  .box h2{font-size:26px;margin-bottom:6px}
+  .box>p{color:var(--ink-3);margin:0 0 24px}
+  .fcard{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--sh)}
+  .fcard .field{margin-bottom:14px}
+  .pw{position:relative} .pw button{position:absolute;right:8px;top:50%;transform:translateY(-50%);border:0;background:none;color:var(--ink-3);cursor:pointer;font-size:12px;font-weight:600}
+  .err{color:var(--red);font-size:13px;min-height:18px;margin:-4px 0 10px}
+  .btn.block{width:100%;padding:12px;font-size:14px}
+  .demo-title{display:flex;align-items:center;gap:10px;margin:26px 0 12px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+  .demo-title::before,.demo-title::after{content:"";flex:1;height:1px;background:var(--line)}
+  .accounts{display:grid;gap:8px}
+  .acc{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 12px;cursor:pointer;text-align:left;width:100%;transition:border-color .15s,box-shadow .15s,transform .1s}
+  .acc:hover{border-color:#b9c6d9;box-shadow:var(--sh);transform:translateY(-1px)}
+  .acc .who{flex:1;min-width:0}
+  .acc b{display:block;font-size:13.5px}
+  .acc .who span{display:block;font-size:12px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .acc code{display:inline-block;margin-top:4px;font-size:11.5px;background:var(--grey-bg);border-radius:6px;padding:2px 7px;color:var(--ink-2);white-space:nowrap}
+  .acc .go{color:var(--navy);flex:none;width:18px}
+  .note{font-size:12px;color:var(--ink-3);margin-top:16px;line-height:1.5}
+  .note a{font-weight:600}
+  @media (max-width:960px){
+    .login{grid-template-columns:minmax(0,1fr)}
+    .login__art{padding:24px 20px 28px}
+    .art__main{padding:26px 0 8px}
+    .art__main p{font-size:14px;margin-bottom:18px}
+    .art__foot{display:none}
+    .login__form{padding:26px 16px 40px}
+  }
+  @media (max-width:520px){
+    .mods{grid-template-columns:1fr 1fr;gap:7px} .mods div{padding:8px 9px;font-size:12px;gap:7px}
+    .brand img{height:46px}
+    .acc code{white-space:normal} .acc .who span{white-space:normal}
+  }
+</style>
+</head>
+<body>
+<div class="login">
+  <section class="login__art">
+    <a class="brand" href="../index.html" style="color:inherit"><img src="../assets/img/logo.png" alt="SOGARA"><div><b>SOGARA</b><span>Espace de gestion</span></div></a>
+    <div class="art__main">
+      <span class="eyebrow">Plateforme de gestion intégrée</span>
+      <h1>Pilotez toute la raffinerie <em>depuis un seul écran.</em></h1>
+      <p>Projets de modernisation, recrutement, achats, facturation, paie, stocks, maintenance, permis de travail et logistique : chaque service travaille sur les mêmes données, avec des circuits de validation clairs et des tableaux de bord en temps réel.</p>
+      <div class="mods" id="mods"></div>
+    </div>
+    <div class="art__foot">© 2026 SOGARA — Port-Gentil · Proposition réalisée par Rouana</div>
+  </section>
+  <section class="login__form">
+    <div class="box">
+      <h2>Connexion</h2>
+      <p>Accédez à votre espace avec vos identifiants.</p>
+      <form class="fcard" id="login-form" autocomplete="off">
+        <div class="field"><label for="login">Identifiant</label><input class="input" id="login" name="login" placeholder="ex. direction" autocapitalize="none"></div>
+        <div class="field"><label for="pass">Mot de passe</label><div class="pw"><input class="input" id="pass" name="pass" type="password" placeholder="••••••••"><button type="button" id="show">Afficher</button></div></div>
+        <div class="err" id="err"></div>
+        <button class="btn primary block" type="submit">Se connecter</button>
+      </form>
+      <div class="demo-title">Comptes de démonstration</div>
+      <div class="accounts" id="accounts"></div>
+      <p class="note">Cliquez sur un profil pour entrer directement. Chaque profil voit les modules et les validations de son métier ; la <b>Direction générale</b> voit tout. Les données sont fictives et restent sur cet appareil. <a href="../index.html">← Retour au site</a></p>
+    </div>
+  </section>
+</div>
+<script src="js/core.js"></script>
+<script>
+(function () {
+  var U = ERP.USERS, icon = ERP.icon;
+  var MODS = [['gantt', 'Projets & Gantt'], ['userplus', 'Recrutement'], ['wallet', 'Paie & personnel'], ['cart', 'Achats & devis'], ['invoice', 'Facturation'], ['tank', 'Stocks & bacs'], ['wrench', 'Maintenance & arrêts'], ['shield', 'Permis de travail'], ['truck', 'Logistique'], ['chart', 'Tableaux de bord']];
+  document.getElementById('mods').innerHTML = MODS.map(function (m) { return '<div>' + icon(m[0]) + m[1] + '</div>'; }).join('');
+  document.getElementById('accounts').innerHTML = U.map(function (u) {
+    return '<button class="acc" data-l="' + u.login + '">' + ERP.ui.avatar(u.name, u.color) + '<div class="who"><b>' + ERP.esc(u.role) + '</b><span>' + ERP.esc(u.desc) + '</span><code>Identifiant : ' + u.login + ' · Mot de passe : ' + u.pass + '</code></div>' + icon('arrow', 'go') + '</button>';
+  }).join('');
+  function enter(l, p) {
+    var u = ERP.session.login(l, p);
+    if (!u) { document.getElementById('err').textContent = 'Identifiant ou mot de passe incorrect.'; return; }
+    location.href = 'app.html#/dashboard';
+  }
+  document.getElementById('accounts').addEventListener('click', function (e) {
+    var b = e.target.closest('.acc'); if (!b) return;
+    var u = U.find(function (x) { return x.login === b.dataset.l; });
+    document.getElementById('login').value = u.login; document.getElementById('pass').value = u.pass;
+    setTimeout(function () { enter(u.login, u.pass); }, 250);
+  });
+  document.getElementById('login-form').addEventListener('submit', function (e) { e.preventDefault(); enter(this.login.value, this.pass.value); });
+  document.getElementById('show').onclick = function () { var p = document.getElementById('pass'); p.type = p.type === 'password' ? 'text' : 'password'; this.textContent = p.type === 'password' ? 'Afficher' : 'Masquer'; };
+})();
+</script>
+</body>
+</html>

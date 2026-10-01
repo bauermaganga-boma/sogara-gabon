@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>SOGARA — Espace de gestion</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0a1f44">
+<link rel="icon" href="../assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/erp.css">
+<link rel="stylesheet" href="css/rh.css">
+<link rel="stylesheet" href="css/finance.css">
+<link rel="stylesheet" href="css/operations.css">
+<link rel="stylesheet" href="css/hse.css">
+</head>
+<body>
+<div class="app" id="app">
+  <aside class="side" aria-label="Menu principal">
+    <a class="side__brand" href="#/dashboard"><img src="../assets/img/logo.png" alt="SOGARA"><div><b>SOGARA</b><span>Espace de gestion</span></div></a>
+    <nav class="side__nav" id="side-nav"></nav>
+    <div class="side__foot">Version de démonstration<br>Conçu par <a href="../index.html">Rouana</a> pour la SOGARA</div>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+  <div class="main">
+    <div class="demo-bar"><span><b>Démonstration</b><span class="db-long"> — données fictives de simulation. Toutes vos actions sont enregistrées sur cet appareil.</span><span class="db-short"> · données fictives</span></span><button id="reset-demo">Réinitialiser</button></div>
+    <header class="top">
+      <button class="top__burger" id="burger" aria-label="Ouvrir le menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      <div class="top__title"><div class="crumb" id="top-crumb"></div><h1 id="top-title">Tableau de bord</h1></div>
+      <label class="top__search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><input id="search" type="search" placeholder="Rechercher (nom, n° de pièce, projet…) puis Entrée"></label>
+      <div><button class="top__icon" id="notif-btn" aria-label="Notifications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg><span class="dot hide" id="notif-dot"></span></button></div>
+      <div><div class="top__user" id="user-btn"><span id="u-av"></span><div class="who"><b id="u-name"></b><span id="u-role"></span></div></div></div>
+    </header>
+    <main class="view" id="view"></main>
+  </div>
+</div>
+
+<script src="../assets/js/sogara-data.js"></script>
+<script src="js/core.js"></script>
+<script src="js/modules/dashboard.js"></script>
+<script src="js/modules/projets.js"></script>
+<script src="js/modules/recrutement.js"></script>
+<script src="js/modules/personnel.js"></script>
+<script src="js/modules/paie.js"></script>
+<script src="js/modules/achats.js"></script>
+<script src="js/modules/ventes.js"></script>
+<script src="js/modules/stocks.js"></script>
+<script src="js/modules/maintenance.js"></script>
+<script src="js/modules/hse.js"></script>
+<script src="js/modules/logistique.js"></script>
+<script src="js/modules/admin.js"></script>
+<script>ERP.boot();</script>
+</body>
+</html>

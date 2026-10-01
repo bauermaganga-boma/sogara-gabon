@@ -1,0 +1,171 @@
+/* SOGARA · Espace de gestion — compléments des modules Achats et Ventes & facturation */
+.fin-root{display:flex;flex-direction:column;gap:16px}
+.fin-head{display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.fin-head h2{font-size:20px}
+.fin-head p{margin:2px 0 0;color:var(--ink-3);font-size:13px}
+.fin-head .row{margin-left:auto}
+.fin-who{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:30px;padding:4px 12px 4px 4px;font-size:12px;color:var(--ink-2)}
+.fin-who b{color:var(--ink)}
+.fin-root>.tabs{margin-bottom:0}
+
+.fin-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px}
+.fin-kpis .kpi__value{font-size:22px}
+.fin-kpis .kpi__label{padding-right:44px}
+
+/* Chaîne procure-to-pay / order-to-cash */
+.fin-flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.fin-flow__s{position:relative;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer;display:flex;flex-direction:column;gap:3px;transition:border-color .15s,box-shadow .15s;text-align:left;font:inherit;color:inherit}
+.fin-flow__s:hover{border-color:#c7d2e1;box-shadow:var(--sh)}
+.fin-flow__s small{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);font-weight:600}
+.fin-flow__s b{font-family:Sora,sans-serif;font-size:22px;line-height:1.1}
+.fin-flow__s span{font-size:12px;color:var(--ink-3)}
+.fin-flow__s::before{content:"";position:absolute;left:0;top:12px;bottom:12px;width:3px;border-radius:0 3px 3px 0;background:var(--c,var(--navy-3))}
+.fin-flow__s.hot{border-color:#f6cfa6;background:linear-gradient(180deg,#fffaf3,#fff)}
+
+/* Points de circuit */
+.fin-dots{display:inline-flex;gap:4px;align-items:center;vertical-align:middle}
+.fin-dots i{width:9px;height:9px;border-radius:50%;background:var(--line);display:inline-block}
+.fin-dots i.ok{background:var(--green)} .fin-dots i.cur{background:var(--yellow-2);box-shadow:0 0 0 3px rgba(245,196,0,.25)} .fin-dots i.ko{background:var(--red)}
+.fin-sub{display:block;font-size:11.5px;color:var(--ink-3);font-weight:400;margin-top:1px}
+.fin-strong{font-weight:600}
+.fin-big{font-family:Sora,sans-serif;font-size:22px;font-weight:700;letter-spacing:-.02em}
+.fin-red{color:var(--red)!important;font-weight:600} .fin-green{color:var(--green)!important;font-weight:600} .fin-orange{color:var(--orange)!important;font-weight:600}
+.fin-more{display:flex;justify-content:center;padding:12px}
+
+/* Lignes de saisie */
+.fin-le{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:14px}
+.fin-le__head,.fin-le__row{display:grid;grid-template-columns:minmax(0,1fr) 84px 80px 130px 38px;gap:8px;align-items:center}
+.fin-le__head{background:#f8fafc;padding:8px 12px;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-3);font-weight:600;border-bottom:1px solid var(--line)}
+.fin-le__rows{display:flex;flex-direction:column}
+.fin-le__row{padding:8px 12px;border-bottom:1px solid var(--line-2)}
+.fin-le__row .input{padding:7px 9px}
+.fin-le__row .fin-le__art{grid-column:1/-1}
+.fin-le__foot{display:flex;align-items:center;gap:10px;padding:10px 12px;flex-wrap:wrap;background:#fbfcfe}
+.fin-le__tot{margin-left:auto;font-size:13px} .fin-le__tot b{font-family:Sora,sans-serif;font-size:15px}
+.fin-circuit{margin-top:14px;padding:12px 14px;border-radius:12px;background:#f6f8fc;border:1px dashed #cfd9e8;font-size:12.5px}
+.fin-circuit .steps{padding-top:10px}
+
+/* Offres (comparatif) */
+.fin-offers{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.fin-offer{border:1px solid var(--line);border-radius:14px;padding:14px;background:#fff;display:flex;flex-direction:column;gap:8px;position:relative}
+.fin-offer.best{border-color:var(--green);box-shadow:0 0 0 3px rgba(30,158,74,.12)}
+.fin-offer.ko{opacity:.7;background:#fbfbfc}
+.fin-offer.won{border-color:var(--navy);box-shadow:0 0 0 3px rgba(15,45,92,.12)}
+.fin-offer__rank{position:absolute;top:-10px;right:12px;background:var(--green);color:#fff;font-size:11px;font-weight:700;border-radius:20px;padding:2px 10px}
+.fin-offer.won .fin-offer__rank{background:var(--navy)}
+.fin-offer h5{margin:0;font-size:14px;font-family:Sora,sans-serif;padding-right:70px}
+.fin-offer .fin-score{display:flex;align-items:baseline;gap:6px}
+.fin-offer .fin-score b{font-family:Sora,sans-serif;font-size:26px}
+.fin-meter{display:grid;grid-template-columns:62px 1fr 34px;gap:8px;align-items:center;font-size:11.5px;color:var(--ink-3)}
+.fin-meter .progress{height:6px}
+.fin-meter em{font-style:normal;text-align:right;font-weight:600;color:var(--ink-2)}
+
+/* Rapprochement 3 voies */
+.fin-3w{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:12px}
+.fin-3w>div{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:#fff}
+.fin-3w small{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);font-weight:600}
+.fin-3w b{font-family:Sora,sans-serif;font-size:17px}
+.fin-3w>div.ko{border-color:#f3c2c2;background:var(--red-bg)}
+td.fin-ecart{background:var(--red-bg);color:var(--red);font-weight:700}
+
+/* Fournisseurs / clients */
+.fin-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.fin-card{cursor:pointer;transition:border-color .15s,box-shadow .15s}
+.fin-card:hover{border-color:#c7d2e1;box-shadow:0 6px 24px rgba(13,27,42,.08)}
+.fin-card .card__b{display:flex;flex-direction:column;gap:10px}
+.fin-card__top{display:flex;gap:12px;align-items:center}
+.fin-card__top b{display:block;font-size:14px;line-height:1.25}
+.fin-stars{color:var(--yellow-2);letter-spacing:1px;font-size:13px;white-space:nowrap}
+.fin-stars span{color:#d5dbe4}
+.fin-kv2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.fin-kv2>div{background:#f7f9fc;border-radius:10px;padding:8px 10px}
+.fin-kv2 small{display:block;font-size:11px;color:var(--ink-3)} .fin-kv2 b{font-size:13.5px}
+
+/* Encours / balance âgée */
+.fin-risk{display:flex;flex-direction:column;gap:14px}
+.fin-risk__row{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,2fr) 120px;gap:14px;align-items:center;cursor:pointer}
+.fin-risk__row .progress{height:10px}
+.fin-risk__row .fin-sub{margin-top:3px}
+.fin-age{display:flex;height:10px;border-radius:10px;overflow:hidden;background:var(--line-2);min-width:80px}
+.fin-age i{display:block;height:100%}
+
+/* Documents imprimables */
+.fin-doc{max-width:860px;margin:0 auto;color:var(--ink)}
+.fin-doc-brand{display:flex;gap:14px;align-items:center}
+.fin-doc-brand img{height:58px;width:auto;border-radius:6px;background:var(--yellow);padding:3px}
+.fin-doc-brand b{display:block;font-family:Sora,sans-serif;font-size:18px;color:var(--navy);letter-spacing:.04em}
+.fin-doc-brand span{display:block;font-size:11.5px;color:var(--ink-3)}
+.fin-doc-title{text-align:right;font-size:12.5px}
+.fin-doc-title h4{margin-bottom:6px;letter-spacing:.04em}
+.fin-doc-parties{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+.fin-doc-parties>div{border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:12.5px;line-height:1.55}
+.fin-doc-parties small{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);font-weight:700;margin-bottom:3px}
+.fin-doc-tbl{width:100%;border-collapse:collapse;font-size:12.5px;min-width:520px}
+.fin-doc-tbl th{background:var(--navy);color:#fff;text-align:left;padding:7px 9px;font-size:11px;text-transform:uppercase;letter-spacing:.04em;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.fin-doc-tbl td{padding:7px 9px;border-bottom:1px solid var(--line-2)}
+.fin-doc-tbl .num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.fin-doc-tot{margin:12px 0 0 auto;width:min(330px,100%);font-size:13px}
+.fin-doc-tot div{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--line-2);gap:10px}
+.fin-doc-tot div.ttc{border:0;background:var(--navy);color:#fff;padding:8px 10px;border-radius:8px;margin-top:6px;font-weight:700;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.fin-doc-words{margin-top:12px;font-size:12.5px;font-style:italic}
+.fin-doc-cond{margin-top:14px;font-size:11.5px;color:var(--ink-2);line-height:1.6;border-top:1px solid var(--line);padding-top:10px}
+.fin-doc-cond ul{margin:4px 0 0;padding-left:18px}
+.fin-doc-sign{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:18px}
+.fin-doc-sign>div{border-top:1px solid var(--ink-3);padding-top:6px;font-size:11.5px;color:var(--ink-2);min-height:66px}
+.fin-doc-sign em{display:block;font-style:normal;color:var(--green);font-weight:600;margin-top:4px}
+.fin-doc-foot{margin-top:16px;font-size:10.5px;color:var(--ink-3);text-align:center;border-top:3px solid var(--yellow);padding-top:8px}
+.fin-demo{display:inline-block;background:#fff9c2;color:#8a6a00;font-size:11px;font-weight:600;border-radius:6px;padding:2px 8px}
+.fin-letter p{margin:0 0 10px;line-height:1.6}
+
+/* Formulaires divers */
+.fin-checks{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px;margin-top:12px}
+.fin-check{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:9px 11px;cursor:pointer;font-size:12.5px}
+.fin-check input{margin-top:2px;accent-color:var(--navy)}
+.fin-check b{display:block;font-size:13px}
+.fin-rec{display:grid;grid-template-columns:minmax(0,1fr) 86px 86px 110px;gap:8px;align-items:center;padding:9px 12px;border-bottom:1px solid var(--line-2);font-size:12.5px}
+.fin-rec.head{background:#f8fafc;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-3);font-weight:600}
+.fin-rec .num{text-align:right;font-variant-numeric:tabular-nums}
+.fin-rec .fin-le__art{grid-column:1/-1}
+.fin-box{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.fin-sect{font-size:13px;font-weight:700;margin:18px 0 8px;display:flex;align-items:center;gap:8px}
+.fin-sect:first-child{margin-top:0}
+.fin-sect svg{width:16px;height:16px;flex:none;color:var(--ink-3)}
+.fin-kpis .kpi__foot{display:block}
+
+@media (max-width:640px){
+  .fin-head .row{margin-left:0;width:100%}
+  .fin-head .row .btn{flex:1 1 auto}
+  .fin-kpis{grid-template-columns:1fr 1fr;gap:10px}
+  .fin-kpis .kpi__value{font-size:17px}
+  .fin-kpis .kpi__label{padding-right:34px}
+  .fin-kpis>.kpi:nth-child(odd):last-child{grid-column:1/-1}
+  .fin-flow{grid-template-columns:1fr 1fr}
+  .fin-flow__s b{font-size:18px}
+  .fin-le__head{display:none}
+  .fin-le__row{grid-template-columns:1fr 1fr 1.3fr 36px}
+  .fin-le__row [data-f=designation]{grid-column:1/-1}
+  .fin-3w{grid-template-columns:1fr}
+  .fin-risk__row{grid-template-columns:1fr;gap:6px}
+  .fin-doc-parties{grid-template-columns:1fr}
+  .fin-doc-title{text-align:left}
+  .doc.fin-doc{padding:14px}
+  .fin-rec{grid-template-columns:1fr 1fr 1fr}
+  .fin-rec>:first-child{grid-column:1/-1;font-weight:600}
+  .fin-rec.head{display:none}
+  .fin-offer h5{padding-right:0;margin-top:6px}
+}
+@media print{
+  body.fin-printing .app,body.fin-printing .toasts,body.fin-printing .modal-back{display:none!important}
+  body.fin-printing .modal-back.fin-print-target{display:block!important;position:static;background:none;backdrop-filter:none;padding:0}
+  body.fin-printing .fin-print-target .modal{width:100%!important;max-height:none;box-shadow:none;border-radius:0;animation:none}
+  body.fin-printing .fin-print-target .modal__h,body.fin-printing .fin-print-target .modal__f,body.fin-printing .fin-noprint{display:none!important}
+  body.fin-printing .fin-print-target .modal__b{padding:0;overflow:visible}
+  body.fin-printing .doc{border:0;padding:0}
+  .fin-doc-tbl{min-width:0}
+}
+.fin-rec__in{display:flex;flex-direction:column;gap:2px;min-width:0}
+@media (max-width:640px){
+  .fin-rec [data-l]::before{content:attr(data-l);display:block;font-size:10.5px;color:var(--ink-3);font-weight:500;text-align:left}
+  .fin-rec .num{text-align:left}
+  .fin-rec[style]{grid-template-columns:1fr 1fr 1fr!important}
+}
