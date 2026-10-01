@@ -69,7 +69,7 @@
 
   /* ------------------------------------------------------------------ comptes de démonstration */
   var USERS = [
-    { login: 'direction', pass: 'demo2026', name: 'Direction générale', short: 'DG', role: 'Administrateur Directeur Général', profile: 'admin', color: '#0f2d5c',
+    { login: 'direction', pass: 'demo2026', name: 'Christian Avaro Yeno', short: 'DG', role: 'Administrateur Directeur Général', profile: 'admin', color: '#0f2d5c', photo: '../assets/img/directeur-general-avatar.jpg', civilite: 'Monsieur Avaro Yeno',
       desc: 'Accès complet : tous les modules, validations finales, paramètres.' },
     { login: 'rh', pass: 'demo2026', name: 'Aïcha Mboumba', short: 'AM', role: 'Responsable Ressources humaines', profile: 'rh', color: '#7c3aed',
       desc: 'Recrutement, personnel, congés, formation et paie.' },
@@ -164,7 +164,7 @@
   };
   function badge(text, tone) { tone = tone || STATUS_TONE[norm(text).replace(/é/g, 'é')] || STATUS_TONE[String(text || '').toLowerCase()] || 'grey'; return '<span class="badge ' + (TONES[tone] || tone) + '">' + esc(text) + '</span>'; }
   function progress(p, color) { p = Math.max(0, Math.min(100, +p || 0)); color = color || (p >= 100 ? 'green' : ''); return '<div class="pbar"><div class="progress ' + color + '"><i style="width:' + p + '%"></i></div><span>' + Math.round(p) + '%</span></div>'; }
-  function avatar(name, color, sm) { var c = color; if (!c) { var hsh = 0; String(name).split('').forEach(function (ch) { hsh = (hsh * 31 + ch.charCodeAt(0)) >>> 0; }); c = ['#0f2d5c', '#2563eb', '#7c3aed', '#1e9e4a', '#e8780c', '#0e7490', '#be185d', '#475569'][hsh % 8]; } return '<span class="avatar' + (sm ? ' sm' : '') + '" style="background:' + c + '">' + esc(fmt.initials(name)) + '</span>'; }
+  function avatar(name, color, sm) { var pu = USERS.find(function (u) { return u.photo && u.name === name; }); if (pu) return '<span class="avatar' + (sm ? ' sm' : '') + '" style="background:#0f2d5c;overflow:hidden;padding:0"><img src="' + pu.photo + '" alt="' + esc(name) + '" style="width:100%;height:100%;object-fit:cover"></span>'; var c = color; if (!c) { var hsh = 0; String(name).split('').forEach(function (ch) { hsh = (hsh * 31 + ch.charCodeAt(0)) >>> 0; }); c = ['#0f2d5c', '#2563eb', '#7c3aed', '#1e9e4a', '#e8780c', '#0e7490', '#be185d', '#475569'][hsh % 8]; } return '<span class="avatar' + (sm ? ' sm' : '') + '" style="background:' + c + '">' + esc(fmt.initials(name)) + '</span>'; }
   function kpi(o) { return '<div class="card kpi">' + (o.icon ? '<div class="kpi__icon ' + (TONES[o.tone || 'blue']) + '">' + icon(o.icon) + '</div>' : '') + '<div class="kpi__label">' + esc(o.label) + '</div><div class="kpi__value">' + o.value + (o.unit ? '<small>' + esc(o.unit) + '</small>' : '') + '</div>' + (o.foot ? '<div class="kpi__foot">' + o.foot + '</div>' : '') + '</div>'; }
 
   /* Tableau : columns = [{key,label,num,render(row),width,class}] ; options: onRow(row), empty, footer(rows) */

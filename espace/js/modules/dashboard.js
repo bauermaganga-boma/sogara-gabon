@@ -32,7 +32,7 @@
         '<div style="position:absolute;inset:0;background:url(../assets/img/raffinerie-panorama.jpg) right center/cover;opacity:.18;mask-image:linear-gradient(90deg,transparent 25%,#000 80%);-webkit-mask-image:linear-gradient(90deg,transparent 25%,#000 80%)"></div>' +
         '<div class="card__b" style="position:relative;padding:22px 24px;display:flex;gap:20px;align-items:center;flex-wrap:wrap">' +
           '<div style="flex:1;min-width:240px"><div style="color:#aebbd4;font-size:12.5px">' + esc(cap(today.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }))) + '</div>' +
-          '<h2 style="font-size:24px;margin:4px 0 6px">' + greeting() + ', ' + esc(u.name.split(' ')[0] === 'Direction' ? 'Direction générale' : u.name.split(' ')[0]) + '</h2>' +
+          '<h2 style="font-size:24px;margin:4px 0 6px">' + greeting() + ', ' + esc(u.civilite || u.name.split(' ')[0]) + '</h2>' +
           '<div style="color:#c9d4e6">' + (pend.length ? 'Vous avez <b style="color:#fce700">' + pend.length + ' élément' + (pend.length > 1 ? 's' : '') + ' à valider</b> aujourd\'hui.' : 'Aucune validation en attente. Tout est à jour.') + '</div></div>' +
           '<div class="dash-stats">' +
             heroStat(fmt.num(last), 't', 'Brut traité en septembre') +
