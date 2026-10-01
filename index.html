@@ -329,6 +329,60 @@
   </div>
 </section>
 
+<!-- ============ ESPACE DE GESTION (accès démonstration) ============ -->
+<section class="section demo-access" id="espace">
+  <style>
+    .demo-access{background:linear-gradient(135deg,#0a1f44 0%,#12366d 100%);color:#fff}
+    .demo-access__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:48px;align-items:center}
+    .demo-access .eyebrow{color:#fce700}
+    .demo-access h2{color:#fff}
+    .demo-access h2 em{color:#fce700;font-style:normal}
+    .demo-access p{color:#c9d4e6}
+    .demo-access__mods{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 26px;padding:0;list-style:none}
+    .demo-access__mods li{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:30px;padding:5px 12px;font-size:.85rem}
+    .creds{background:#fff;color:#0d1b2a;border-radius:20px;padding:22px;box-shadow:0 24px 60px rgba(0,0,0,.3)}
+    .creds__head{display:flex;align-items:center;gap:10px;margin-bottom:6px;font-weight:800;font-size:1.05rem}
+    .creds__head span{background:#fce700;color:#0a1f44;border-radius:8px;padding:3px 9px;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase}
+    .creds__note{color:#5b6b82!important;font-size:.88rem;margin:0 0 14px}
+    .creds table{width:100%;border-collapse:collapse;font-size:.92rem}
+    .creds th{text-align:left;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#7a879a;padding:8px 10px;border-bottom:2px solid #fce700}
+    .creds tbody tr:hover{background:#fffbd6}.creds td{padding:10px;border-bottom:1px solid #eef1f5;vertical-align:middle}
+    .creds tr:last-child td{border-bottom:0}
+    .creds code{font-family:ui-monospace,Consolas,monospace;font-size:.92rem;background:#f1f4f9;border-radius:6px;padding:3px 8px;font-weight:700;color:#0a1f44;white-space:nowrap}
+    .creds td:first-child{font-weight:600}
+    .creds__go{display:inline-flex;align-items:center;gap:4px;font-size:.82rem;font-weight:700;color:#0f2d5c;text-decoration:none;white-space:nowrap}
+    .creds__go:hover{text-decoration:underline}
+    .creds__foot{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+    @media (max-width:900px){.demo-access__grid{grid-template-columns:1fr;gap:28px}}
+    @media (max-width:560px){.creds{padding:16px}.creds th:last-child,.creds td:last-child{display:none}.creds td,.creds th{padding:8px 6px}.creds code{font-size:.82rem;padding:2px 6px}}
+  </style>
+  <div class="container demo-access__grid">
+    <div>
+      <p class="eyebrow reveal">07 — Espace de gestion</p>
+      <h2 class="title reveal">Gérez toute la raffinerie <em>depuis un seul outil</em></h2>
+      <p class="reveal">Projets et planning Gantt, recrutement, paie, achats et devis, facturation, stocks, maintenance et arrêts techniques, permis de travail, logistique : chaque service dispose de son espace, avec des circuits de validation et des tableaux de bord.</p>
+      <ul class="demo-access__mods reveal"><li>Projets &amp; Gantt</li><li>Recrutement</li><li>Paie</li><li>Achats &amp; devis</li><li>Facturation</li><li>Stocks &amp; bacs</li><li>Maintenance</li><li>Permis de travail</li><li>Logistique</li></ul>
+      <a href="espace/index.html" class="btn btn--gold reveal">Ouvrir l'espace de gestion <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="creds reveal">
+      <div class="creds__head"><span>Démo</span>Identifiants de connexion</div>
+      <p class="creds__note">Mot de passe identique pour tous les profils : <code>demo2026</code></p>
+      <table>
+        <thead><tr><th>Profil</th><th>Identifiant</th><th>Mot de passe</th><th></th></tr></thead>
+        <tbody>
+          <tr><td>Direction générale (accès complet)</td><td><code>direction</code></td><td><code>demo2026</code></td><td><a class="creds__go" href="espace/index.html?u=direction">Entrer →</a></td></tr>
+          <tr><td>Ressources humaines</td><td><code>rh</code></td><td><code>demo2026</code></td><td><a class="creds__go" href="espace/index.html?u=rh">Entrer →</a></td></tr>
+          <tr><td>Achats &amp; Logistique</td><td><code>achats</code></td><td><code>demo2026</code></td><td><a class="creds__go" href="espace/index.html?u=achats">Entrer →</a></td></tr>
+          <tr><td>Finances</td><td><code>finance</code></td><td><code>demo2026</code></td><td><a class="creds__go" href="espace/index.html?u=finance">Entrer →</a></td></tr>
+          <tr><td>HSE</td><td><code>hse</code></td><td><code>demo2026</code></td><td><a class="creds__go" href="espace/index.html?u=hse">Entrer →</a></td></tr>
+          <tr><td>Projets &amp; Maintenance</td><td><code>projets</code></td><td><code>demo2026</code></td><td><a class="creds__go" href="espace/index.html?u=projets">Entrer →</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script>document.querySelectorAll(".creds tbody tr").forEach(function(tr){tr.style.cursor="pointer";tr.addEventListener("click",function(){location.href=tr.querySelector("a").href;});});</script>
+</section>
+
 <!-- ============ GALERIE ============ -->
 <section class="section" id="galerie">
   <div class="container">
@@ -351,7 +405,7 @@
 <section class="section section--dark contact" id="contact">
   <div class="container contact__inner">
     <div class="contact__info">
-      <p class="eyebrow eyebrow--light reveal">07 — Contact</p>
+      <p class="eyebrow eyebrow--light reveal">08 — Contact</p>
       <h2 class="title title--light reveal">Parlons <em>énergie</em></h2>
       <p class="reveal contact__lead">Clients professionnels, fournisseurs, journalistes ou candidats : nos équipes vous répondent.</p>
       <ul class="coords">

@@ -34,6 +34,10 @@
   .box{width:min(460px,100%);min-width:0}
   .box h2{font-size:26px;margin-bottom:6px}
   .box>p{color:var(--ink-3);margin:0 0 24px}
+  .demo-creds{background:#fff9c2;border:1px solid #f5c400;border-left:5px solid #f5c400;border-radius:14px;padding:14px 16px;margin:0 0 18px;font-size:14px;line-height:1.6}
+  .demo-creds b{display:block;color:#0a1f44;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+  .demo-creds code{background:#fff;border:1px solid #e6d36b;border-radius:6px;padding:2px 8px;font-weight:700;color:#0a1f44;font-size:14px}
+  .demo-creds span{display:block;font-size:12.5px;color:#5b6b82}
   .fcard{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--sh)}
   .fcard .field{margin-bottom:14px}
   .pw{position:relative} .pw button{position:absolute;right:8px;top:50%;transform:translateY(-50%);border:0;background:none;color:var(--ink-3);cursor:pointer;font-size:12px;font-weight:600}
@@ -83,6 +87,7 @@
       <a class="btn" href="../index.html" style="margin-bottom:22px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 19l-7-7 7-7"/></svg>Retour au site</a>
       <h2>Connexion</h2>
       <p>Accédez à votre espace avec vos identifiants.</p>
+      <div class="demo-creds"><b>Accès démonstration</b><div>Identifiant : <code>direction</code> &nbsp;·&nbsp; Mot de passe : <code>demo2026</code></div><span>Autres profils : rh, achats, finance, hse, projets — même mot de passe.</span></div>
       <form class="fcard" id="login-form" autocomplete="off">
         <div class="field"><label for="login">Identifiant</label><input class="input" id="login" name="login" placeholder="ex. direction" autocapitalize="none"></div>
         <div class="field"><label for="pass">Mot de passe</label><div class="pw"><input class="input" id="pass" name="pass" type="password" placeholder="••••••••"><button type="button" id="show">Afficher</button></div></div>
@@ -116,6 +121,7 @@
     setTimeout(function () { enter(u.login, u.pass); }, 250);
   });
   document.getElementById('login-form').addEventListener('submit', function (e) { e.preventDefault(); enter(this.login.value, this.pass.value); });
+  var qu = new URLSearchParams(location.search).get('u'); var pre = U.find(function (x) { return x.login === qu; }) || U[0]; document.getElementById('login').value = pre.login; document.getElementById('pass').value = pre.pass;
   document.getElementById('show').onclick = function () { var p = document.getElementById('pass'); p.type = p.type === 'password' ? 'text' : 'password'; this.textContent = p.type === 'password' ? 'Afficher' : 'Masquer'; };
 })();
 </script>
